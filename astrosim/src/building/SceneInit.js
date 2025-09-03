@@ -1,0 +1,64 @@
+import * as THREE from "three";
+import Stats from "three/examples/jsm/libs/stats.module";
+
+
+export default class SceneInit {
+    constructor(fov=36, camera, scene, stats, controls, renderer) {
+        this.fov = fov;
+        this.camera = camera;
+        this.scene = scene;
+        this.stats = stats;
+        this.controls = controls;
+        this.renderer = renderer;
+    }
+
+    initScene() {
+        // create scene using camera with perspective projection
+        // render a 3d space
+        this.camera = new THREE.PerspectiveCamera(
+            this.fov,
+            window.innerWidth / window.innerHeight,
+            1,
+            1000
+        );
+        this.camera.position.z = 128;
+        this.scene = new THREE.Scene();
+
+        this.renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById("threeCanvas"),
+            antialias: true,
+        });
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(this.renderer.domElement);
+
+        // add statistics panel on fps and execution time
+        this.stats = Stats();
+        document.body.appendChild(this.stats.dom);
+
+        // if window resizes
+        window.addEventListener("resize", () => this.onWindowResize(), false);
+
+    }
+
+
+
+    animate() {
+        // animates the window and renders everything using render function
+        window.requestAnimationFrame(this.animate.bind(this));
+        this.render();
+        this.stats.update();
+    }
+    
+    render() {
+        this.renderer.render(this.scene, this.camera);
+    }
+
+    onWindowResize() {
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+
+
+}

@@ -1,7 +1,13 @@
+import { Sim } from '../components/sim.jsx'
+
 export const Home = () => {
 
     return (
-        <div>Hello World!</div>
+        <div>
+            <p>Hello World!</p>
+            <canvas id='threeCanvas' />
+            <Sim />
+        </div>
     )
 
 }
