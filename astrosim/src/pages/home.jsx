@@ -1,13 +1,13 @@
 import { Sim } from '../components/sim.jsx'
 import { Settings } from '../components/settings.jsx'
+import '../components/home.css'
 
 export const Home = () => {
 
     return (
         <div>
-            <p>Hello World!</p>
-            <Sim />
-            <Settings />
+            <Sim id='sim' />
+            <Settings id='settings' />
         </div>
     )
 

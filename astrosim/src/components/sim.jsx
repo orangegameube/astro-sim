@@ -89,7 +89,6 @@ export const Sim = () => {
 
     return (
         <div id='canvCont'>
-            <p>AstroSim</p>
             <canvas id='threeCanvas' />
         </div>
     )

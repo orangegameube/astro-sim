@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
 export default class SceneInit {
-    constructor(fov=36, camera, scene, stats, controls, renderer) {
+    constructor(fov=60, camera, scene, stats, controls, renderer) {
         this.fov = fov;
         this.camera = camera;
         this.scene = scene;
@@ -22,14 +22,14 @@ export default class SceneInit {
             1,
             1000
         );
-        this.camera.position.z = 128;
+        this.camera.position.z = 100;
         this.scene = new THREE.Scene();
 
         this.renderer = new THREE.WebGLRenderer({
             canvas: document.getElementById("threeCanvas"),
             antialias: true,
         });
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setSize((window.innerWidth), (window.innerHeight));
         document.body.appendChild(this.renderer.domElement);
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
