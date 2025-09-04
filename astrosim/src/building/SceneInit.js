@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import Stats from "three/examples/jsm/libs/stats.module";
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
 export default class SceneInit {
@@ -30,6 +31,8 @@ export default class SceneInit {
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(this.renderer.domElement);
+
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
         // add statistics panel on fps and execution time
         this.stats = Stats();
