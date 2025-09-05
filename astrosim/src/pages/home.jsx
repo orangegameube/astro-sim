@@ -6,8 +6,8 @@ export const Home = () => {
 
     return (
         <div>
-            <Sim id='sim' />
             <Settings id='settings' />
+            <Sim id='sim' />
         </div>
     )
 

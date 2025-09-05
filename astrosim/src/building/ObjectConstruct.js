@@ -1,12 +1,12 @@
 import * as THREE from "three";
 
 export default class Planet {
-    constructor (radius, distance, textureFile, mass, path) {
+    constructor (radius, distance, textureFile, mass, speed) {
         this.radius = radius;
         this.distance = distance;
         this.textureFile = textureFile;
         this.mass = mass;
-        this.path = path;
+        this.speed = speed;
     }
 
     getMesh () {
@@ -20,15 +20,4 @@ export default class Planet {
         return this.mesh;
     }
 
-    getTrail() {
-        var pathvar = [];
-        if (this.path === true) {
-            pathvar.push(1);
-            pathvar.push([]);
-        }
-        else {
-            pathvar.push(0);
-        }
-        return pathvar;
-    }
 }
