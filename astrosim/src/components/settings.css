@@ -1,11 +1,16 @@
 
 #settingsMenu {
     background-color: aliceblue;
-    border-radius: 5%;
+    border-radius: 2%;
     color:black;
     width: 200px;
     text-align: center;
-};
+    padding: 20px;
+}
+
+
+
+
 
 .slidecontainer {
     margin: auto;
@@ -18,7 +23,7 @@
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 90%;
-    height: 25px;
+    height: 12px;
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -29,4 +34,47 @@
 /* Mouse-over effects */
 .slider:hover {
     opacity: 1; /* Fully shown on mouse-over */
+}
+
+.speed::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background:crimson;
+    cursor: pointer; /* Cursor on hover */
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+}
+
+.mass::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background:deepskyblue;
+    cursor: pointer; /* Cursor on hover */
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    border-radius: 100%;
+}
+
+
+
+
+.sethead {
+    font-size: 20px;
+    font-weight:bold;
+}
+
+label {
+    font-size: 13px;
+    margin-top: 0px;
+}
+
+
+
+
+.simbutton {
+    margin: 4px 0px
+}
+
+#runsim {
+    margin-top: 16px;
 }
