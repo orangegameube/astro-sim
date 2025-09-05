@@ -1,12 +1,11 @@
 import * as THREE from "three";
 
 export default class Planet {
-    constructor (radius, distance, textureFile, mass, speed) {
+    constructor (radius, distance, textureFile, mass) {
         this.radius = radius;
         this.distance = distance;
         this.textureFile = textureFile;
         this.mass = mass;
-        this.speed = speed;
     }
 
     getMesh () {

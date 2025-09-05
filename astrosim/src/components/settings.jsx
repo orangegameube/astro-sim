@@ -22,9 +22,6 @@ export const Settings = () => {
         var outputM5 = document.getElementById(inoutList[4][1]);
         outputM5.innerHTML = sliderM5.value; // Display the default slider value
 
-        var sliderS1 = document.getElementById(inoutList[5][0]);
-        var outputS1 = document.getElementById(inoutList[5][1]);
-        outputS1.innerHTML = sliderS1.value; // Display the default slider value
         var sliderS2 = document.getElementById(inoutList[6][0]);
         var outputS2 = document.getElementById(inoutList[6][1]);
         outputS2.innerHTML = sliderS2.value; // Display the default slider value
@@ -58,9 +55,6 @@ export const Settings = () => {
             outputM5.innerHTML = this.value;
         }
 
-        sliderS1.oninput = function() {
-            outputS1.innerHTML = this.value;
-        }
         sliderS2.oninput = function() {
             outputS2.innerHTML = this.value;
         }
@@ -81,7 +75,6 @@ export const Settings = () => {
             sliderM3.value = 1;
             sliderM4.value = 1;
             sliderM5.value = 1;
-            sliderS1.value = 1;
             sliderS2.value = 1;
             sliderS3.value = 1;
             sliderS4.value = 1;
@@ -91,7 +84,6 @@ export const Settings = () => {
             outputM3.innerHTML = sliderM3.value;
             outputM4.innerHTML = sliderM4.value;
             outputM5.innerHTML = sliderM5.value;
-            outputS1.innerHTML = sliderS1.value;
             outputS2.innerHTML = sliderS2.value;
             outputS3.innerHTML = sliderS3.value;
             outputS4.innerHTML = sliderS4.value;
@@ -126,25 +118,21 @@ export const Settings = () => {
             </div>
 
             <div>
-                <p class='sethead'>Change Speed</p>
+                <p class='sethead'>Change Distance</p>
                 <div class="slidecontainer">
-                    <input type="range" min="-100" max="100" defaultValue="1" class="slider speed" id="sunSRange" />
-                    <label>Sun: x<span id="sunSOut"></span></label>
-                </div>
-                <div class="slidecontainer">
-                    <input type="range" min="-100" max="100" defaultValue="1" class="slider speed" id="mercSRange" />
+                    <input type="range" min="0.01" max="20" defaultValue="0.39" class="slider speed" id="mercSRange" />
                     <label>Mercury: x<span id="mercSOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="-100" max="100" defaultValue="1" class="slider speed" id="venSRange" />
+                    <input type="range" min="0.01" max="20" defaultValue="0.72" class="slider speed" id="venSRange" />
                     <label>Venus: x<span id="venSOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="-100" max="100" defaultValue="1" class="slider speed" id="earthSRange" />
+                    <input type="range" min="0.01" max="20" defaultValue="1" class="slider speed" id="earthSRange" />
                     <label>Earth: x<span id="earthSOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="-100" max="100" defaultValue="1" class="slider speed" id="marsSRange" />
+                    <input type="range" min="0.01" max="20" defaultValue="1.5" class="slider speed" id="marsSRange" />
                     <label>Mars: x<span id="marsSOut"></span></label>
                 </div>
             </div>
