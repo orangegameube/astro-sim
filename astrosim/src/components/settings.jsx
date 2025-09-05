@@ -73,6 +73,30 @@ export const Settings = () => {
         sliderS5.oninput = function() {
             outputS5.innerHTML = this.value;
         }
+
+        var resetButton = document.getElementById('resetdefaults');
+        resetButton.onclick = function() {
+            sliderM1.value = 1;
+            sliderM2.value = 1;
+            sliderM3.value = 1;
+            sliderM4.value = 1;
+            sliderM5.value = 1;
+            sliderS1.value = 1;
+            sliderS2.value = 1;
+            sliderS3.value = 1;
+            sliderS4.value = 1;
+            sliderS5.value = 1;
+            outputM1.innerHTML = sliderM1.value;
+            outputM2.innerHTML = sliderM2.value;
+            outputM3.innerHTML = sliderM3.value;
+            outputM4.innerHTML = sliderM4.value;
+            outputM5.innerHTML = sliderM5.value;
+            outputS1.innerHTML = sliderS1.value;
+            outputS2.innerHTML = sliderS2.value;
+            outputS3.innerHTML = sliderS3.value;
+            outputS4.innerHTML = sliderS4.value;
+            outputS5.innerHTML = sliderS5.value;
+        }
     })
 
     return (
