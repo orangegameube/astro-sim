@@ -78,11 +78,11 @@ export const Settings = () => {
 
         var resetButton = document.getElementById('resetdefaults');
         resetButton.onclick = function() {
-            sliderM1.value = 1;
-            sliderM2.value = 1;
-            sliderM3.value = 1;
-            sliderM4.value = 1;
-            sliderM5.value = 1;
+            sliderM1.value = 50;
+            sliderM2.value = 33;
+            sliderM3.value = 49;
+            sliderM4.value = 60;
+            sliderM5.value = 64;
             sliderS2.value = 39;
             sliderS3.value = 72;
             sliderS4.value = 100;
