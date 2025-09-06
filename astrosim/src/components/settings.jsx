@@ -5,7 +5,7 @@ import '../components/settings.css'
 export const Settings = () => {
 
     useEffect(() => {
-        var inoutList = [['sunMRange', 'sunMOut'], ['mercMRange', 'mercMOut'], ['venMRange', 'venMOut'], ['earthMRange', 'earthMOut'], ['marsMRange', 'marsMOut'], ['sunSRange', 'sunSOut'], ['mercSRange', 'mercSOut'], ['venSRange', 'venSOut'], ['earthSRange', 'earthSOut'], ['marsSRange', 'marsSOut']];
+        var inoutList = [['sunMRange', 'sunMOut'], ['mercMRange', 'mercMOut'], ['venMRange', 'venMOut'], ['earthMRange', 'earthMOut'], ['marsMRange', 'marsMOut'], ['sunSRange', 'sunSOut'], ['mercSRange', 'mercSOut'], ['venSRange', 'venSOut'], ['earthSRange', 'earthSOut'], ['marsSRange', 'marsSOut'], ['speedRange', 'speedOut']];
         var sliderM1 = document.getElementById(inoutList[0][0]);
         var outputM1 = document.getElementById(inoutList[0][1]);
         outputM1.innerHTML = sliderM1.value; // Display the default slider value
@@ -34,6 +34,10 @@ export const Settings = () => {
         var sliderS5 = document.getElementById(inoutList[9][0]);
         var outputS5 = document.getElementById(inoutList[9][1]);
         outputS5.innerHTML = sliderS5.value; // Display the default slider value
+
+        var sliderSpeed = document.getElementById(inoutList[10][0]);
+        var outputSpeed = document.getElementById(inoutList[10][1]);
+        outputSpeed.innerHTML = sliderSpeed.value; // Display the default slider value
 
         // Update the current slider value (each time you drag the slider handle)
         sliderM1.oninput = function() {
@@ -68,6 +72,10 @@ export const Settings = () => {
             outputS5.innerHTML = this.value;
         }
 
+        sliderSpeed.oninput = function() {
+            outputSpeed.innerHTML = this.value;
+        }
+
         var resetButton = document.getElementById('resetdefaults');
         resetButton.onclick = function() {
             sliderM1.value = 1;
@@ -75,10 +83,10 @@ export const Settings = () => {
             sliderM3.value = 1;
             sliderM4.value = 1;
             sliderM5.value = 1;
-            sliderS2.value = 1;
-            sliderS3.value = 1;
-            sliderS4.value = 1;
-            sliderS5.value = 1;
+            sliderS2.value = 39;
+            sliderS3.value = 72;
+            sliderS4.value = 100;
+            sliderS5.value = 150;
             outputM1.innerHTML = sliderM1.value;
             outputM2.innerHTML = sliderM2.value;
             outputM3.innerHTML = sliderM3.value;
@@ -96,23 +104,23 @@ export const Settings = () => {
             <div>
                 <p class='sethead'>Change Mass</p>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="100" defaultValue="1" class="slider mass" id="sunMRange" />
+                    <input type="range" min="1" max="100" defaultValue="50" class="slider mass" id="sunMRange" />
                     <label>Sun: x<span id="sunMOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="100" defaultValue="1" class="slider mass" id="mercMRange" />
+                    <input type="range" min="1" max="100" defaultValue="33" class="slider mass" id="mercMRange" />
                     <label>Mercury: x<span id="mercMOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="100" defaultValue="1" class="slider mass" id="venMRange" />
+                    <input type="range" min="1" max="100" defaultValue="49" class="slider mass" id="venMRange" />
                     <label>Venus: x<span id="venMOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="100" defaultValue="1" class="slider mass" id="earthMRange" />
+                    <input type="range" min="1" max="100" defaultValue="60" class="slider mass" id="earthMRange" />
                     <label>Earth: x<span id="earthMOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="100" defaultValue="1" class="slider mass" id="marsMRange" />
+                    <input type="range" min="1" max="100" defaultValue="64" class="slider mass" id="marsMRange" />
                     <label>Mars: x<span id="marsMOut"></span></label>
                 </div>
             </div>
@@ -120,21 +128,26 @@ export const Settings = () => {
             <div>
                 <p class='sethead'>Change Distance</p>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="20" defaultValue="0.39" class="slider speed" id="mercSRange" />
+                    <input type="range" min="1" max="500" defaultValue="39" class="slider speed" id="mercSRange" />
                     <label>Mercury: x<span id="mercSOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="20" defaultValue="0.72" class="slider speed" id="venSRange" />
+                    <input type="range" min="1" max="500" defaultValue="72" class="slider speed" id="venSRange" />
                     <label>Venus: x<span id="venSOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="20" defaultValue="1" class="slider speed" id="earthSRange" />
+                    <input type="range" min="1" max="500" defaultValue="100" class="slider speed" id="earthSRange" />
                     <label>Earth: x<span id="earthSOut"></span></label>
                 </div>
                 <div class="slidecontainer">
-                    <input type="range" min="0.01" max="20" defaultValue="1.5" class="slider speed" id="marsSRange" />
+                    <input type="range" min="1" max="500" defaultValue="150" class="slider speed" id="marsSRange" />
                     <label>Mars: x<span id="marsSOut"></span></label>
                 </div>
+            </div>
+            <div>
+                <p class='sethead'>Simulation Speed</p>
+                <input type="range" min="1" max="1000" defaultValue="50" class="slider speed" id="speedRange" />
+                <label>Speed: x<span id="speedOut"></span></label>
             </div>
             <div>
                 <button class='simbutton' id='runsim'>Run Simulation</button>
