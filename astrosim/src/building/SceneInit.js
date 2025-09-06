@@ -22,7 +22,7 @@ export default class SceneInit {
             1,
             1000
         );
-        this.camera.position.z = 100;
+        this.camera.position.z = 200;
         this.scene = new THREE.Scene();
 
         this.renderer = new THREE.WebGLRenderer({
