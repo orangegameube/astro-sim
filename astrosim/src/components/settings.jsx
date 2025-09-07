@@ -101,8 +101,24 @@ export const Settings = () => {
         }
     })
 
+    const settingStyle = {
+        width: '200px',
+        backgroundColor: 'aliceblue',
+        borderRadius: '2%',
+        color:'black',
+        textAlign: 'center',
+        padding: '20px'
+    }
+
+    const buttonStyle = {
+        borderRadius: '8px',
+        backgroundColor: '#1a1a1a',
+        fontSize: '1em',
+        padding: '0.6em 1.2em'
+    }
+
     return (
-        <div id='settingsMenu'>
+        <div id='settingsMenu' style={settingStyle}>
             <div>
                 <p class='sethead'>Change Mass</p>
                 <div class="slidecontainer">
@@ -152,8 +168,8 @@ export const Settings = () => {
                 <label>Speed: x<span id="speedOut"></span></label>
             </div>
             <div>
-                <button class='simbutton' id='runsim'>Run Simulation</button>
-                <button class='simbutton' id='resetdefaults'>Reset to Defaults</button>
+                <button class='simbutton' id='runsim' style={buttonStyle}>Run Simulation</button>
+                <button class='simbutton' id='resetdefaults' style={buttonStyle}>Reset to Defaults</button>
             </div>
         </div>
     )
