@@ -38,7 +38,7 @@ export const Sim = () => {
         const earth = new Planet(4, 100, earthtextvar, 1);
         const earthMesh = earth.getMesh();
         let earthSystem = new THREE.Group();
-        venusSystem.add(earthMesh);
+        earthSystem.add(earthMesh);
 
         const mars = new Planet(3, 150, marstextvar, 1);
         const marsMesh = mars.getMesh();
@@ -129,7 +129,7 @@ export const Sim = () => {
             const earth = new Planet(4, earthDist, earthtextvar, (earthMass / 10));
             const earthMesh = earth.getMesh();
             let earthSystem = new THREE.Group();
-            venusSystem.add(earthMesh);
+            earthSystem.add(earthMesh);
 
             const mars = new Planet(3, marsDist, marstextvar, (marsMass / 10));
             const marsMesh = mars.getMesh();
@@ -147,22 +147,17 @@ export const Sim = () => {
             function calcVel(body, sunobj) {
                 return (Math.sqrt((sunobj.mass * G) / body.distance) * (speed / 25))
             }
-            function calcFGrav(body, sys, sun, sunsys) {
-                let bodypos = sys.position;
-                console.log(sys.position)
-                let sunpos = sunsys.position
-                let r = bodypos.distanceTo(sunpos)
-                console.log((G * body.mass * sun.mass) / (r * r))
-                return (G * body.mass * sun.mass) / (r * r)
+            function calcFGrav(body, sun) {
+                let r = body.distance
+                return ((G * body.mass * sun.mass) * speed * 500) / (r * r)
             }
 
             const animate = () => {
             sunMesh.rotation.y += 0.001;
-            mercurySystem.position.x += Math.cos(calcFGrav(mercury, mercurySystem, sun, sunSystem)) / mercury.mass;
-            mercurySystem.position.z += Math.sin(calcFGrav(mercury, mercurySystem, sun, sunSystem)) / mercury.mass;
-            venusSystem.rotation.y += calcVel(venus, sun) / venus.mass;
-            earthSystem.rotation.y += calcVel(earth, sun) / earth.mass;
-            marsSystem.rotation.y += calcVel(mars, sun) / mars.mass;
+            mercurySystem.rotation.y += calcFGrav(mercury, sun) / mercury.mass;
+            venusSystem.rotation.y += calcFGrav(venus, sun) / venus.mass;
+            earthSystem.rotation.y += calcFGrav(earth, sun) / earth.mass;
+            marsSystem.rotation.y += calcFGrav(mars, sun) / mars.mass;
 
 
 
