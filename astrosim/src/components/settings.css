@@ -55,6 +55,16 @@
     border-radius: 100%;
 }
 
+.speedreal::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background:rgb(4, 201, 86);
+    cursor: pointer; /* Cursor on hover */
+    width: 12px; /* Set a specific slider handle width */
+    height: 12px; /* Slider handle height */
+    border-radius: 15%;
+}
+
 
 
 

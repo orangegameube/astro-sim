@@ -164,7 +164,7 @@ export const Settings = () => {
             </div>
             <div>
                 <p class='sethead'>Simulation Speed</p>
-                <input type="range" min="1" max="1000" defaultValue="250" class="slider speed" id="speedRange" />
+                <input type="range" min="1" max="1000" defaultValue="250" class="slider speedreal" id="speedRange" />
                 <label>Speed: x<span id="speedOut"></span></label>
             </div>
             <div>
